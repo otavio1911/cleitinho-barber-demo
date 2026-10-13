@@ -1,1 +1,1014 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Cleitinho Barber | Demonstração Black Tech</title>
+
+<meta name="description" content="Conceito de site moderno para a Cleitinho Barber. Projeto demonstrativo independente desenvolvido pela Black Tech.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+:root {
+  --bg: #060b15;
+  --surface: #101c31;
+  --navy: #0b1730;
+  --blue: #397bff;
+  --blue-light: #75a5ff;
+  --text: #f5f8ff;
+  --muted: #a5b3c9;
+  --border: #243654;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1150px, 90%);
+  margin: auto;
+}
+
+h1, h2, h3 {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+section {
+  padding: 100px 0;
+}
+
+/* ========================================
+   MENU
+======================================== */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(6, 11, 21, 0.96);
+  border-bottom: 1px solid var(--border);
+
+  backdrop-filter: blur(15px);
+}
+
+.nav {
+  min-height: 85px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.logo {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 31px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: var(--blue);
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  color: #c4d0e4;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--blue-light);
+}
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 28px;
+
+  background: var(--blue);
+  color: white;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  font-weight: 700;
+
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #245ed5;
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 30px rgba(57, 123, 255, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: #6c89b8;
+}
+
+.btn-outline:hover {
+  background: #152744;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  min-height: 680px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 11, 21, 0.98) 0%,
+      rgba(7, 15, 30, 0.91) 45%,
+      rgba(7, 15, 30, 0.45) 100%
+    ),
+    url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.tag {
+  display: inline-block;
+
+  color: var(--blue-light);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: clamp(55px, 8vw, 105px);
+  line-height: 0.95;
+
+  margin: 0 0 28px;
+}
+
+h1 span {
+  color: var(--blue);
+}
+
+.hero p {
+  max-width: 530px;
+
+  color: #c3cfe1;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  margin-top: 35px;
+}
+
+/* ========================================
+   TÍTULOS
+======================================== */
+
+.section-title {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.section-title h2 {
+  font-size: clamp(40px, 5vw, 65px);
+  margin: 10px 0;
+}
+
+.section-title p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.line {
+  width: 70px;
+  height: 4px;
+
+  background: var(--blue);
+
+  margin: 22px auto;
+}
+
+/* ========================================
+   SERVIÇOS
+======================================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  padding: 38px;
+
+  background: linear-gradient(
+    145deg,
+    #14233c,
+    #0c1525
+  );
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--blue);
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card .icon {
+  font-size: 42px;
+}
+
+.card h3 {
+  font-size: 29px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+/* ========================================
+   GALERIA
+======================================== */
+
+.galeria-section {
+  background: #0a1425;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 350px;
+
+  object-fit: cover;
+
+  border-radius: 14px;
+  border: 1px solid var(--border);
+
+  transition: 0.4s;
+}
+
+.gallery img:hover {
+  transform: scale(1.025);
+  border-color: var(--blue);
+}
+
+/* ========================================
+   DIFERENCIAIS
+======================================== */
+
+.diferenciais {
+  background: #080f1d;
+}
+
+.diferenciais-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.diferencial {
+  padding: 35px;
+
+  background: #111f36;
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  text-align: center;
+
+  transition: 0.3s;
+}
+
+.diferencial:hover {
+  transform: translateY(-7px);
+  border-color: var(--blue);
+}
+
+.diferencial span {
+  font-size: 40px;
+}
+
+.diferencial h3 {
+  font-size: 27px;
+  margin-bottom: 12px;
+}
+
+.diferencial p {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+/* ========================================
+   FAQ
+======================================== */
+
+.faq {
+  background: #060b15;
+}
+
+.faq-lista {
+  max-width: 850px;
+  margin: auto;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+
+  background: #101c31;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: 23px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+  color: white;
+}
+
+.faq-item[open] {
+  border-color: var(--blue);
+}
+
+.faq-item p {
+  padding: 0 23px 23px;
+  margin: 0;
+
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ========================================
+   CONTATO
+======================================== */
+
+.contact {
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #183663,
+      #081122 65%
+    );
+}
+
+.contact h2 {
+  font-size: clamp(40px, 5vw, 65px);
+}
+
+.contact p {
+  max-width: 600px;
+
+  margin: 0 auto 30px;
+
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+footer {
+  padding: 35px 0;
+
+  border-top: 1px solid var(--border);
+
+  text-align: center;
+
+  color: #94a4bc;
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.demo {
+  max-width: 800px;
+  margin: auto;
+
+  color: #a1b0c5;
+
+  font-size: 12px;
+}
+
+/* ========================================
+   BOTÃO FLUTUANTE
+======================================== */
+
+.contato-flutuante {
+  position: fixed;
+
+  bottom: 24px;
+  right: 24px;
+
+  z-index: 200;
+
+  padding: 16px 24px;
+
+  background: var(--blue);
+  color: white;
+
+  border-radius: 50px;
+
+  font-weight: 700;
+
+  box-shadow: 0 8px 30px rgba(57, 123, 255, 0.35);
+
+  transition: 0.3s;
+}
+
+.contato-flutuante:hover {
+  background: #245ed5;
+  transform: translateY(-4px);
+}
+
+/* ========================================
+   ANIMAÇÕES
+======================================== */
+
+.revelar {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.7s, transform 0.7s;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 800px) {
+
+  .grid,
+  .gallery,
+  .diferenciais-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    padding: 18px 0;
+  }
+
+  nav {
+    width: 100%;
+
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 15px;
+  }
+
+  .hero {
+    min-height: 580px;
+  }
+
+  section {
+    padding: 75px 0;
+  }
+
+  .gallery img {
+    height: 320px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .hero {
+    min-height: 550px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .contato-flutuante {
+    bottom: 15px;
+    right: 15px;
+
+    padding: 13px 17px;
+
+    font-size: 13px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ========================================
+     MENU
+======================================== -->
+
+<header>
+  <div class="container nav">
+
+    <a href="#inicio" class="logo">
+      CLEITINHO<span> BARBER</span>
+    </a>
+
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<!-- ========================================
+     HERO
+======================================== -->
+
+<section class="hero" id="inicio">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <span class="tag">
+        ESTILO • PRECISÃO • PERSONALIDADE
+      </span>
+
+      <h1>
+        SEU ESTILO.<br>
+        <span>NOSSA ARTE.</span>
+      </h1>
+
+      <p>
+        Uma nova maneira de apresentar a experiência
+        da Cleitinho Barber.
+
+        Um conceito moderno que une estilo,
+        personalidade e atenção aos detalhes.
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="#contato" class="btn">
+          CONHECER AGENDAMENTO
+        </a>
+
+        <a href="#servicos" class="btn btn-outline">
+          EXPLORAR SERVIÇOS
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     SERVIÇOS
+======================================== -->
+
+<section id="servicos">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <span class="tag">
+        CONCEITO DE SERVIÇOS
+      </span>
+
+      <h2>
+        NOSSOS SERVIÇOS
+      </h2>
+
+      <div class="line"></div>
+
+      <p>
+        Exemplos de serviços apresentados
+        exclusivamente para esta demonstração.
+      </p>
+
+    </div>
+
+    <div class="grid">
+
+      <article class="card">
+
+        <div class="icon">✂️</div>
+
+        <h3>Corte Masculino</h3>
+
+        <p>
+          Um corte pensado para valorizar
+          a personalidade e o estilo de cada cliente.
+        </p>
+
+      </article>
+
+      <article class="card">
+
+        <div class="icon">🪒</div>
+
+        <h3>Barba</h3>
+
+        <p>
+          Acabamento, cuidado e atenção
+          aos detalhes para um visual marcante.
+        </p>
+
+      </article>
+
+      <article class="card">
+
+        <div class="icon">💈</div>
+
+        <h3>Corte + Barba</h3>
+
+        <p>
+          Uma experiência completa de cuidados
+          em uma única visita.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     GALERIA
+======================================== -->
+
+<section class="galeria-section" id="galeria">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <span class="tag">
+        INSPIRAÇÃO
+      </span>
+
+      <h2>
+        GALERIA DE ESTILOS
+      </h2>
+
+      <div class="line"></div>
+
+      <p>
+        Imagens ilustrativas utilizadas
+        para demonstrar a apresentação visual do site.
+      </p>
+
+    </div>
+
+    <div class="gallery">
+
+      <img
+        src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=700&q=80"
+        alt="Ambiente de barbearia — imagem ilustrativa"
+        loading="lazy"
+      >
+
+      <img
+        src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=700&q=80"
+        alt="Serviço de barbearia — imagem ilustrativa"
+        loading="lazy"
+      >
+
+      <img
+        src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=700&q=80"
+        alt="Corte masculino — imagem ilustrativa"
+        loading="lazy"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     DIFERENCIAIS
+======================================== -->
+
+<section class="diferenciais" id="diferenciais">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <span class="tag">
+        EXPERIÊNCIA
+      </span>
+
+      <h2>
+        MAIS QUE UM CORTE
+      </h2>
+
+      <div class="line"></div>
+
+      <p>
+        Ideias de diferenciais que podem
+        ser apresentados em um futuro site oficial.
+      </p>
+
+    </div>
+
+    <div class="diferenciais-grid">
+
+      <article class="diferencial">
+
+        <span>✂️</span>
+
+        <h3>ESTILO PERSONALIZADO</h3>
+
+        <p>
+          Uma proposta de atendimento que
+          valoriza o estilo individual.
+        </p>
+
+      </article>
+
+      <article class="diferencial">
+
+        <span>💈</span>
+
+        <h3>ATENÇÃO AOS DETALHES</h3>
+
+        <p>
+          Uma experiência pensada para
+          transmitir cuidado e qualidade.
+        </p>
+
+      </article>
+
+      <article class="diferencial">
+
+        <span>📱</span>
+
+        <h3>PRATICIDADE</h3>
+
+        <p>
+          Informações organizadas
+          e acesso simplificado aos canais de contato.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     FAQ
+======================================== -->
+
+<section class="faq" id="faq">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <span class="tag">
+        DÚVIDAS
+      </span>
+
+      <h2>
+        PERGUNTAS FREQUENTES
+      </h2>
+
+      <div class="line"></div>
+
+      <p>
+        Exemplos de informações que
+        podem facilitar a experiência dos clientes.
+      </p>
+
+    </div>
+
+    <div class="faq-lista">
+
+      <details class="faq-item">
+
+        <summary>
+          Como funcionaria o agendamento?
+        </summary>
+
+        <p>
+          O cliente poderia acessar diretamente
+          o WhatsApp ou o sistema de agendamento
+          utilizado pela barbearia,
+          após a integração ser autorizada.
+        </p>
+
+      </details>
+
+      <details class="faq-item">
+
+        <summary>
+          Quais serviços estariam disponíveis?
+        </summary>
+
+        <p>
+          Os serviços e preços oficiais seriam
+          cadastrados conforme as informações
+          fornecidas pelo estabelecimento.
+        </p>
+
+      </details>
+
+      <details class="faq-item">
+
+        <summary>
+          Onde encontrar a barbearia?
+        </summary>
+
+        <p>
+          O endereço e os horários oficiais
+          poderiam aparecer nesta página,
+          acompanhados de um botão para o mapa.
+        </p>
+
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     CONTATO
+======================================== -->
+
+<section class="contact" id="contato">
+
+  <div class="container">
+
+    <span class="tag">
+      CONTATO E AGENDAMENTO
+    </span>
+
+    <h2>
+      PRONTO PARA UM NOVO VISUAL?
+    </h2>
+
+    <p>
+      Imagine seus clientes encontrando
+      informações sobre os serviços e
+      acessando o canal de agendamento
+      de forma rápida e organizada.
+    </p>
+
+    <a href="#aviso" class="btn">
+      AGENDAMENTO — DEMONSTRAÇÃO
+    </a>
+
+    <p style="margin-top:25px;font-size:12px;">
+      Este botão é demonstrativo.
+      Nenhum agendamento será realizado.
+      A integração real dependerá da autorização
+      do estabelecimento.
+    </p>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- ========================================
+     RODAPÉ
+======================================== -->
+
+<footer id="aviso">
+
+  <div class="container">
+
+    <p class="demo">
+      Projeto conceitual independente desenvolvido
+      pela Black Tech.
+
+      Não é o site oficial da Cleitinho Barber
+      e não possui vínculo ou autorização comercial
+      do estabelecimento.
+
+      Serviços e fotografias são ilustrativos.
+      Não é possível realizar agendamentos por esta página.
+    </p>
+
+    <p>
+      © 2026 Black Tech — Demonstração.
+    </p>
+
+  </div>
+
+</footer>
+
+<!-- ========================================
+     BOTÃO FLUTUANTE
+======================================== -->
+
+<a
+  href="#contato"
+  class="contato-flutuante"
+  aria-label="Ver demonstração de agendamento"
+>
+  💈 Agendamento
+</a>
+
+</body>
+</html>
